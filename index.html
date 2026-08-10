@@ -3,130 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#a96845" />
-  <title>เข้าสู่ระบบ | Maison</title>
+  <meta name="theme-color" content="#0b1020" />
+  <title>เข้าสู่ระบบ | Charee</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --espresso: #34251f;
-      --coffee: #5d4035;
-      --clay: #a96845;
-      --clay-dark: #8c5136;
-      --cream: #fbf8f4;
-      --sand: #f2e8df;
-      --muted: #927c70;
-      --line: #e9dcd2;
-      --white: #ffffff;
-    }
-
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      min-width: 320px;
-      color: var(--espresso);
-      background: var(--cream);
-      font-family: "DM Sans", sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .page { min-height: 100vh; display: grid; grid-template-columns: minmax(420px, 43%) 1fr; }
-
-    .visual {
-      position: relative;
-      min-height: 100vh;
-      overflow: hidden;
-      padding: 46px clamp(34px, 6vw, 84px);
-      color: var(--white);
-      background: var(--clay);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .visual::before, .visual::after { content: ""; position: absolute; border-radius: 50%; pointer-events: none; }
-    .visual::before { width: 480px; height: 480px; top: -175px; right: -220px; border: 1px solid rgba(255,255,255,.16); box-shadow: 0 0 0 44px rgba(255,255,255,.035), 0 0 0 88px rgba(255,255,255,.025); }
-    .visual::after { width: 380px; height: 380px; bottom: -215px; left: -185px; background: rgba(77, 42, 27, .14); }
-    .logo { position: relative; z-index: 1; display: flex; align-items: center; gap: 11px; font-size: 15px; font-weight: 700; letter-spacing: .19em; text-transform: uppercase; }
-    .logo-mark { width: 31px; height: 31px; border: 1px solid rgba(255,255,255,.7); border-radius: 50%; display: grid; place-items: center; font-family: Georgia, serif; font-size: 17px; font-weight: 400; letter-spacing: 0; }
-    .visual-copy { position: relative; z-index: 1; max-width: 390px; margin: auto 0; padding: 90px 0 30px; }
-    .eyebrow { display: inline-flex; align-items: center; gap: 12px; margin-bottom: 25px; font-size: 11px; letter-spacing: .21em; text-transform: uppercase; opacity: .75; }
-    .eyebrow::before { content: ""; width: 30px; height: 1px; background: currentColor; }
-    h1 { margin: 0; font-family: "Playfair Display", Georgia, serif; font-size: clamp(38px, 4.2vw, 62px); font-weight: 500; line-height: 1.07; letter-spacing: -.035em; }
-    .visual-copy p { max-width: 310px; margin: 24px 0 0; color: rgba(255,255,255,.75); font-size: 14px; line-height: 1.8; }
-    .visual-foot { position: relative; z-index: 1; display: flex; justify-content: space-between; align-items: center; color: rgba(255,255,255,.68); font-size: 11px; letter-spacing: .06em; }
-    .social-proof { display: flex; align-items: center; gap: 10px; }
-    .avatars { display: flex; }
-    .avatar { width: 25px; height: 25px; margin-left: -6px; border: 2px solid var(--clay); border-radius: 50%; background: #d9aa8b; }
-    .avatar:first-child { margin-left: 0; background: #f0d2b9; }
-    .avatar:nth-child(2) { background: #b77958; }
-    .avatar:nth-child(3) { background: #704934; }
-
-    .form-side { display: flex; align-items: center; justify-content: center; padding: 50px clamp(30px, 7vw, 120px); background: var(--cream); }
-    .form-wrap { width: min(100%, 390px); }
-    .mobile-logo { display: none; color: var(--coffee); }
-    .form-header { margin-bottom: 32px; }
-    .form-header h2 { margin: 0 0 9px; font-family: "Playfair Display", Georgia, serif; font-size: 32px; font-weight: 600; letter-spacing: -.025em; }
-    .form-header p { margin: 0; color: var(--muted); font-size: 14px; }
-    form { display: grid; gap: 19px; }
-    .field { display: grid; gap: 8px; }
-    label { color: var(--coffee); font-size: 12px; font-weight: 600; }
-    .input-box { position: relative; display: flex; align-items: center; }
-    .input-icon { position: absolute; left: 15px; width: 17px; color: #b69a8b; pointer-events: none; }
-    input { width: 100%; height: 51px; padding: 0 45px; border: 1px solid var(--line); border-radius: 9px; outline: none; color: var(--espresso); background: var(--white); font: inherit; font-size: 13px; transition: border .2s, box-shadow .2s; }
-    input::placeholder { color: #bca99f; }
-    input:focus { border-color: var(--clay); box-shadow: 0 0 0 4px rgba(169,104,69,.11); }
-    .toggle-password { position: absolute; right: 13px; display: grid; place-items: center; width: 28px; height: 28px; padding: 0; border: 0; color: #ae9587; background: transparent; cursor: pointer; }
-    .form-row { display: flex; justify-content: space-between; align-items: center; margin: -3px 0 3px; }
-    .remember { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 12px; cursor: pointer; }
-    .remember input { width: 15px; height: 15px; padding: 0; accent-color: var(--clay); cursor: pointer; }
-    a { color: var(--clay-dark); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .forgot { font-size: 12px; font-weight: 600; }
-    .primary { height: 51px; border: 0; border-radius: 9px; color: var(--white); background: var(--coffee); font: inherit; font-size: 13px; font-weight: 600; letter-spacing: .02em; cursor: pointer; box-shadow: 0 7px 17px rgba(93,64,53,.14); transition: background .2s, transform .2s, box-shadow .2s; }
-    .primary:hover { background: var(--clay-dark); transform: translateY(-1px); box-shadow: 0 9px 20px rgba(93,64,53,.2); }
-    .divider { display: flex; align-items: center; gap: 13px; margin: 25px 0 20px; color: #b59f93; font-size: 11px; }
-    .divider::before, .divider::after { content: ""; height: 1px; flex: 1; background: var(--line); }
-    .socials { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; }
-    .social { height: 45px; display: flex; justify-content: center; align-items: center; gap: 9px; border: 1px solid var(--line); border-radius: 8px; color: var(--coffee); background: var(--white); font: inherit; font-size: 12px; cursor: pointer; transition: background .2s, border .2s; }
-    .social:hover { border-color: #d2b9aa; background: #fdfaf8; }
-    .signup { margin: 30px 0 0; color: var(--muted); text-align: center; font-size: 12px; }
-    .signup a { margin-left: 4px; font-weight: 700; }
-    .terms { margin: 34px auto 0; max-width: 300px; color: #b19d91; text-align: center; font-size: 10px; line-height: 1.7; }
-
-    @media (max-width: 760px) {
-      .page { display: block; }
-      .visual { min-height: 245px; padding: 27px 25px; }
-      .visual-copy { padding: 36px 0 18px; margin: 0; }
-      .visual-copy h1 { font-size: 39px; }
-      .visual-copy p, .visual-foot { display: none; }
-      .visual::before { width: 300px; height: 300px; top: -145px; right: -150px; }
-      .form-side { min-height: calc(100vh - 245px); padding: 42px 25px 35px; align-items: flex-start; }
-    }
-    @media (max-width: 420px) { .socials { grid-template-columns: 1fr; } .form-side { padding-top: 34px; } }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main class="page">
-    <section class="visual" aria-label="Maison introduction">
-      <div class="logo"><span class="logo-mark">M</span> Maison</div>
+    <section class="visual" aria-label="Charee introduction">
+      <div class="logo"><span class="logo-mark">C</span> Charee</div>
       <div class="visual-copy">
-        <div class="eyebrow">A softer way to live</div>
-        <h1>Make space<br />for what matters.</h1>
-        <p>พื้นที่เล็ก ๆ สำหรับจัดระเบียบความคิด และใช้ชีวิตในแบบที่เป็นคุณ</p>
+        <div class="eyebrow">The future, in focus</div>
+        <h1>Hello charee</h1>
+        <p>แพลตฟอร์มที่ช่วยให้ทีมของคุณทำงานได้ชัดเจนขึ้น เร็วขึ้น และพร้อมเติบโตไปด้วยกัน</p>
       </div>
       <div class="visual-foot">
-        <div class="social-proof"><span class="avatars"><i class="avatar"></i><i class="avatar"></i><i class="avatar"></i></span> เข้าร่วมกับเราแล้วกว่า 12,000 คน</div>
-        <span>© 2024 Maison</span>
+        <div class="social-proof"><span class="avatars"><i class="avatar"></i><i class="avatar"></i><i class="avatar"></i></span> ทีมกว่า 12,000 คนใช้งานแล้ว</div>
+        <span>© 2026 Charee</span>
       </div>
     </section>
 
     <section class="form-side">
       <div class="form-wrap">
-        <div class="mobile-logo logo"><span class="logo-mark">M</span> Maison</div>
+        <div class="mobile-logo logo"><span class="logo-mark">C</span> Charee</div>
         <header class="form-header">
+          <div class="form-kicker"><span></span> Secure workspace</div>
           <h2>ยินดีต้อนรับกลับมา</h2>
-          <p>เข้าสู่ระบบเพื่อไปต่อในพื้นที่ของคุณ</p>
+          <p>เข้าสู่ระบบเพื่อไปต่อใน workspace ของคุณ</p>
         </header>
         <form id="loginForm">
           <div class="field">
@@ -154,8 +59,8 @@
         </form>
         <div class="divider"><span>หรือเข้าสู่ระบบด้วย</span></div>
         <div class="socials">
-          <button class="social" type="button"><strong style="color:#4285f4;font-size:15px">G</strong> Google</button>
-          <button class="social" type="button"><strong style="font-size:16px">f</strong> Facebook</button>
+          <button class="social" type="button"><strong class="google-mark">G</strong> Google</button>
+          <button class="social" type="button"><strong class="facebook-mark">f</strong> Facebook</button>
         </div>
         <p class="signup">ยังไม่มีบัญชี? <a href="#signup">สมัครสมาชิก</a></p>
         <p class="terms">การเข้าสู่ระบบแสดงว่าคุณยอมรับ <a href="#terms">ข้อกำหนดการใช้งาน</a> และ <a href="#privacy">นโยบายความเป็นส่วนตัว</a> ของเรา</p>
